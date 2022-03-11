@@ -3,7 +3,7 @@
 #include <time.h>
 
 /**
- * main - check whether a number stored in the variable n is positive or negative
+ * main - check if n is positive or negative
  *
  * Return: 0 if Successful
  */
@@ -11,6 +11,7 @@
 int main(void)
 {
 	int n;
+
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	
