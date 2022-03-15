@@ -21,7 +21,7 @@ void times_table(void)
 				continue;
 			}
 
-			prod = x + y;
+			prod = x * y;
 			_putchar(',');
 			_putchar(' ');
 			if (prod >= 10)
