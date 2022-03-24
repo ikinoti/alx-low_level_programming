@@ -10,19 +10,15 @@
 char *leet(char *str)
 {
 	int x, y;
-	char str1[] = "aeotl";
-	char SRT1[] = "AEOTL";
-	char str2[] = "43071";
+	char arr[] = "aAeEoOtTlL";
+	char arr1[] = "4433007711";
 
-	for (x = 0; str[x] != '\0'; x++)
+	for (x = 0; *(str + x); x++)
 	{
-		for (y = 0; y < 5; y++)
+		for (y = 0; y <= 9; y++)
 		{
-			if (str[x] == str1[y] || str[x] == STR1[y])
-			{
-				str[x] = str2[y];
-				break;
-			}
+			if (arr[y] == *(str + x))
+				*(str + x) = arr1[y];
 		}
 	}
 	return (str);
