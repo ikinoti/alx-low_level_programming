@@ -9,26 +9,36 @@
 
 char *cap_string(char *str)
 {
-	int x = 0, y;
+	int x, y, z;
 
 	char arr[] = ",\t;\n; .!?\"(){}";
 
-	while (*(str + x))
+	for (x = 0; str[x] != '\0'; x++)
 	{
-		if (*(str + x) >= 'a' && *(str + x) <= 'z')
+		z = 0;
+
+		if (x == 0)
 		{
-			if (x == 0)
-				*(s + x) -= 'a' - 'A';
-			else
+			z = 1;
+		}
+		else
+		{
+			for (y = 0; arr[y] != '\0'; y++)
 			{
-				for (y = 0; y <= 12; y++)
+				if (str[x - 1] == arr[y])
 				{
-					if (arr[y] == *(s + x - 1))
-						*(s + x) -= 'a' - 'A';
+					z = 1;
+					break;
 				}
 			}
 		}
-		x++;
+		if (z == 1)
+		{
+			if (str[x] <= 'z' && str[x] >= 'a')
+			{
+				str[x] -= ('a' - 'A');
+			}
+		}
 	}
 	return (str);
 }
